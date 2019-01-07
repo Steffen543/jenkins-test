@@ -10,7 +10,10 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
+		bat 'SET DOCKER_TLS_VERIFY=1'
+		bat 'SET DOCKER_HOST=tcp://192.168.99.100:2376'
+		bat 'SET DOCKER_CERT_PATH=C:\Users\Steff\.docker\machine\machines\default'
+		bat 'SET DOCKER_MACHINE_NAME=default'
         app = docker.build("steffenkoch/hellonodehome")
     }
 
