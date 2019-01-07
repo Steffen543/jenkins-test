@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-		sh 'docker-machine env --shell powershell default | Invoke-Expression'
+		sh 'docker-machine ls'
         app = docker.build("steffenkoch/hellonodehome")
     }
 
